@@ -19,24 +19,24 @@ public class BasicAbility extends Ability{
 	private Animation[] animations;
 	private int index;
 	
-	public BasicAbility(Actor handler, TextureRegion symbol, FileHandle tex, String name, int SrcWidth, int SrcHeight, int Scale, int RegionX, int RegionY, int x, int y, Animation... animations) {
-		this(handler, symbol, new Texture(tex), name, SrcWidth, SrcHeight, Scale, RegionX, RegionY, x, y, animations);
+	public BasicAbility(Actor handler, TextureRegion symbol, FileHandle tex, String name, int SrcWidth, int SrcHeight, int Scale, int RegionX, int RegionY, int x, int y, int MaxLevel, Animation... animations) {
+		this(handler, symbol, new Texture(tex), name, SrcWidth, SrcHeight, Scale, RegionX, RegionY, x, y, MaxLevel, animations);
 	}
 	
-	public BasicAbility(Actor handler, TextureRegion symbol, Texture tex, String name,  int SrcWidth, int SrcHeight, int Scale, int RegionX, int RegionY, int x, int y, Animation... animations) {
-		this(handler, symbol, new TextureRegion(tex, RegionX, RegionY, SrcWidth, SrcHeight), name, x, y, Scale, animations);
+	public BasicAbility(Actor handler, TextureRegion symbol, Texture tex, String name,  int SrcWidth, int SrcHeight, int Scale, int RegionX, int RegionY, int x, int y, int MaxLevel, Animation... animations) {
+		this(handler, symbol, new TextureRegion(tex, RegionX, RegionY, SrcWidth, SrcHeight), name, x, y, Scale, MaxLevel, animations);
 		
 	}
 	
-	public BasicAbility(Actor handler, TextureRegion symbol, TextureRegion tex, String name,  int x, int y, int Scale, Animation... animations) {
-		this(handler, symbol, tex, name, x, y, tex.getRegionWidth()*Scale, tex.getRegionHeight()*Scale, animations);
+	public BasicAbility(Actor handler, TextureRegion symbol, TextureRegion tex, String name,  int x, int y, int Scale, int MaxLevel, Animation... animations) {
+		this(handler, symbol, tex, name, x, y, tex.getRegionWidth()*Scale, tex.getRegionHeight()*Scale, MaxLevel, animations);
 		this.setScale(Scale);
 		this.setSrcWidth(tex.getRegionWidth());
 		this.setSrcHeight(tex.getRegionHeight());
 	}
 
-	public BasicAbility(Actor handler, TextureRegion symbol, TextureRegion tex, String name,  int x, int y, int Width, int Height, Animation... animations) {
-		super(handler, symbol, tex, x, y, Width, Height);
+	public BasicAbility(Actor handler, TextureRegion symbol, TextureRegion tex, String name,  int x, int y, int Width, int Height, int MaxLevel, Animation... animations) {
+		super(handler, symbol, tex, x, y, Width, Height, MaxLevel);
 		super.setLoc(x, y);
 		this.setName(name);
 		this.setAnimations(animations);

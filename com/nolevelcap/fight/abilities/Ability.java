@@ -20,8 +20,9 @@ public abstract class Ability {
 	private boolean abilityRunning;
 	private Timer timer;
 	private Actor target;
+	private int MaxLevel;
 	
-	public Ability(Actor handler, TextureRegion symbol, TextureRegion tex, float x, float y, int Width, int Height){
+	public Ability(Actor handler, TextureRegion symbol, TextureRegion tex, float x, float y, int Width, int Height, int MaxLevel){
 		this.setHandler(handler);
 		this.setTex(tex);
 		this.setSymbol(symbol);
@@ -30,6 +31,7 @@ public abstract class Ability {
 		this.setHeight(Height);
 		this.setWidth(Width);
 		this.timer = new Timer();
+		this.setMaxLevel(MaxLevel);
 	}
 	
 	public abstract void render(SpriteBatch batch, BitmapFont font);
@@ -119,6 +121,14 @@ public abstract class Ability {
 
 	public void setTarget(Actor target) {
 		this.target = target;
+	}
+
+	public int getMaxLevel() {
+		return MaxLevel;
+	}
+
+	public void setMaxLevel(int maxLevel) {
+		MaxLevel = maxLevel;
 	}
 
 }

@@ -12,8 +12,8 @@ public class BasicAttack extends BasicAbility {
 	private static final String name = "Basic Attack";
 	private static MotionRegionCollection walking_forward, walking_backward;
 	
-	public BasicAttack(Actor handler, TextureRegion symbol, TextureRegion tex, Texture AnimationTexture, int x, int y, int Scale, int SrcWidth, int SrcHeight){
-		super(handler, symbol, tex, name, x, y, Scale);
+	public BasicAttack(Actor handler, TextureRegion symbol, TextureRegion tex, Texture AnimationTexture, int x, int y, int Scale, int SrcWidth, int SrcHeight, int MaxLevel){
+		super(handler, symbol, tex, name, x, y, Scale, MaxLevel);
 		walking_forward = new MotionRegionCollection(
 				AnimationTexture, 
 				SrcWidth, 

@@ -20,6 +20,7 @@ public abstract class Actor {
 	private Ability[] abilities;
 	private boolean renderAbilities;
 	private Animation currentAnimation;
+	private Ability chosenAbility;
 	
 	public Actor(Scene scene){
 		this.setScene(scene);
@@ -208,6 +209,14 @@ public abstract class Actor {
 	public void runAnimiation(){
 		getAnimation().reset();
 		getAnimation().setRunning(true);
+	}
+	
+	public Ability getChosenAbility() {
+		return chosenAbility;
+	}
+
+	public void setChosenAbility(Ability chosenAbility) {
+		this.chosenAbility = chosenAbility;
 	}
 
 }
